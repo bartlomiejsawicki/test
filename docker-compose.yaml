@@ -3,14 +3,14 @@ services:
   node1:
     container_name: node1
     restart: always
-    image: mynginx
+    image: bartlomiejsawicki/mynginx
   node2:
     container_name: node2
     restart: always
-    image: mynginx
+    image: bartlomiejsawicki/mynginx
   haproxy:
     container_name: haproxy
-    image: myhaproxy
+    image: bartlomiejsawicki/myhaproxy
     restart: always
     volumes:
       - ./ssl.pem:/etc/ssl/cert/cert.pem:ro
