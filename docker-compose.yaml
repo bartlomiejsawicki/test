@@ -1,0 +1,19 @@
+version: '2.2'
+services:
+  node1:
+    container_name: node1
+    restart: always
+    image: mynginx
+  node2:
+    container_name: node2
+    restart: always
+    image: mynginx
+  haproxy:
+    container_name: haproxy
+    image: myhaproxy
+    restart: always
+    volumes:
+      - ./ssl.pem:/etc/ssl/cert/cert.pem:ro
+    ports:
+      - "8443:8443"
+      - "8080:8080"
