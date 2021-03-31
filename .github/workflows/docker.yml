@@ -35,6 +35,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./nginx
+          file: ./nginx/Dockerfile
           push: true
           tags: bartlomiejsawicki/mynginx:latest
       -
@@ -43,6 +44,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./haproxy
+          file: ./haproxy/Dockerfile
           push: true
           tags: bartlomiejsawicki/myhaproxy:latest
       -
